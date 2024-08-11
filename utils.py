@@ -10,4 +10,4 @@ def get_words(text: str) -> list[str]:
     >>> words
     ['you', 'are', 'awesome']
     """
-    return re.findall(WORD_PATTERN, text.lower())
+    return re.findall(WORD_PATTERN, str(text).lower())
