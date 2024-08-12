@@ -75,15 +75,3 @@ class InvertedIndex:
             print(f"{self.movies_[index-1][0]}")
             if i > 15:
                 break
-
-#ii = InvertedIndex()
-#ii.build_from_file("movies.csv")
-# print(ii.inverted_lists_)
-# print(ii.doc_ids_[0])
-
-# while True:
-#    query = input('Query: ')
-#    ii.generate_output(query)        
-
-
-
