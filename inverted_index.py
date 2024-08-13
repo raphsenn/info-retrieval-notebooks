@@ -24,9 +24,10 @@ class InvertedIndex:
                         'score': row['score'], 
                         'genre': row['genre'], 
                         'overview': row['overview'],
+                        'crew': row['crew']
                         }
-            title, date, score, genre ,overview = get_words(row_data['title']), row_data['date_x'], row_data['score'], get_words(row_data['genre']) ,get_words(row_data['overview'])
-            for word in title + overview + genre:
+            title, date, score, genre ,overview, crew = get_words(row_data['title']), row_data['date_x'], row_data['score'], get_words(row_data['genre']) ,get_words(row_data['overview']), get_words(row_data['crew'])
+            for word in title + overview + genre + crew:
                 if word not in self.inverted_lists_:
                     self.inverted_lists_[word] = [doc_id]
                 else:
