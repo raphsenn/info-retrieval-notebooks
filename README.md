@@ -3,7 +3,7 @@ Some information retrieval algorithms and datastructures (inverted index, rankin
 
 ## Inverted-Index
 
-![image](./res/inivertedindex.png)
+![image](./res/invertedindex.png)
 * Image source @bahatman
 
 ### Dataset
