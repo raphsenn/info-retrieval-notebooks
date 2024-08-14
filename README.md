@@ -1,10 +1,12 @@
 # info-retrieval-notebooks
-Some information retrieval algorithms and datastructures (inverted index, ranking (bm25, tf, idf scores), fuzzy search, ...)
+Some information retrieval algorithms and datastructures (inverted index incl. ranking (bm25-, tf-, idf scores), fuzzy string search, levenshtein distance, ...)
+
+* Designed for viewing in GitHub.
 
 ## Inverted-Index
 
 ![image](./res/invertedindex.png)
-* Image source @bahatman
+* Image source @bhatman
 
 ### Dataset
 
