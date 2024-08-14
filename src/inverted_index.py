@@ -1,6 +1,5 @@
 import pandas as pd
-from utils import get_words
-
+import re
 
 class InvertedIndex:
     def __init__(self) -> None:
@@ -12,7 +11,17 @@ class InvertedIndex:
         # Store document_ids.
         self.doc_ids_: list[int] = []
 
-        self.movies_: list[tuple[str, str]] = []
+        self.movies_: list[tuple[str, str, str, str]] = []
+
+    def get_words(self, text: str) -> list[str]:
+        """
+        >>> text = 'You are... awesome!'
+        >>> words = get_words(text)
+        >>> words
+        ['you', 'are', 'awesome']
+        """
+        WORD_PATTERN = '[a-zA-Z]+'
+        return re.findall(WORD_PATTERN, str(text).lower())
 
     def build_from_file(self, file_name: str) -> None:
         # Interprete each line as a document.
@@ -26,7 +35,7 @@ class InvertedIndex:
                         'overview': row['overview'],
                         'crew': row['crew']
                         }
-            title, date, score, genre ,overview, crew = get_words(row_data['title']), row_data['date_x'], row_data['score'], get_words(row_data['genre']) ,get_words(row_data['overview']), get_words(row_data['crew'])
+            title, date, score, genre ,overview, crew = self.get_words(row_data['title']), row_data['date_x'], row_data['score'], self.get_words(row_data['genre']), self.get_words(row_data['overview']), self.get_words(row_data['crew'])
             for word in title + overview + genre + crew:
                 if word not in self.inverted_lists_:
                     self.inverted_lists_[word] = [doc_id]
@@ -34,7 +43,7 @@ class InvertedIndex:
                     if self.inverted_lists_[word][-1] != doc_id:
                         self.inverted_lists_[word].append(doc_id)
             self.doc_ids_.append(doc_id)
-            self.movies_.append((row['title'], row['overview']))
+            self.movies_.append((row['title'], row['overview'], row['date_x'], row['score']))
             doc_id += 1
 
     def intersect(self, array1: list[int], array2: list[int]) -> list[int]:
@@ -67,7 +76,7 @@ class InvertedIndex:
         return result
 
     def generate_output(self, query: str, threshold: int = 15) -> None:
-        query_words: list[str] = get_words(query)
+        query_words: list[str] = self.get_words(query)
         query_result = self.prozess_query(query_words)
         print(f"Query: {query}")
         if len(query_result) == 0:
