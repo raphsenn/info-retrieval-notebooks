@@ -3,10 +3,25 @@ Some information retrieval algorithms and datastructures (inverted index incl. r
 
 * Designed for viewing in GitHub.
 
-## Inverted-Index
+## Implemented Algorithms and Datastructures
 
-![image](./res/invertedindex.png)
-* Image source @bhatman
+### Search
+* InvertedIndex
+
+* InvertedIndex (via vector space model, linear algebra, sparse matrices)
+
+* Fuzzy string search
+
+* Ranking and evaluation
+
+### Databases
+* Basic database operations (project, select, cartesian product)
+
+* more database operations (equi join, merge join, hash join, group by)
+
+* SPARQL to SQL algorithm
+
+* SQL to SPARQL algorithm 
 
 ### Dataset
 
