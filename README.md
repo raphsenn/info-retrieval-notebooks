@@ -1,11 +1,10 @@
 # info-retrieval-notebooks
-Some information retrieval algorithms and datastructures (inverted index incl. ranking (bm25-, tf-, idf scores), fuzzy string search, levenshtein distance, ...)
 
 * Designed for viewing in GitHub.
 
 ## Implemented Algorithms and Datastructures
 
-### Search
+### search
 * InvertedIndex
 
 * InvertedIndex (via vector space model, linear algebra, sparse matrices)
@@ -14,7 +13,7 @@ Some information retrieval algorithms and datastructures (inverted index incl. r
 
 * Ranking and evaluation
 
-### Databases
+### databases
 * Basic database operations (project, select, cartesian product)
 
 * more database operations (equi join, merge join, hash join, group by)
@@ -23,10 +22,7 @@ Some information retrieval algorithms and datastructures (inverted index incl. r
 
 * SQL to SPARQL algorithm 
 
-### Dataset
+### Used datasets
 
-#### IMDB Dataset
-The IMDB dataset contains information about movies, including their names, release dates, user ratings, genres, overviews, cast and crew members, original titles, production status, original languages, budgets, revenues, and countries of origin. This data can be used for various analyses, such as identifying trends in movie genres, exploring the relationship between budget and revenue, and predicting the success of future movies.
-
+#### IMDB movies dataset
 [https://www.kaggle.com/datasets/ashpalsingh1525/imdb-movies-dataset](https://www.kaggle.com/datasets/ashpalsingh1525/imdb-movies-dataset)
-
