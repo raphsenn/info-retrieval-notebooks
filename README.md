@@ -9,6 +9,8 @@
 
 * InvertedIndex (via vector space model, linear algebra, sparse matrices)
 
+* Similarity search (via cosine similarity)
+
 * Fuzzy string search
 
 * Ranking and evaluation
